@@ -1,0 +1,16 @@
+// # Variables #
+
+//generando una variable:
+$colorPrimario: rgb(114, 164, 214);
+
+.articulo {
+    .titulo {
+        color: $colorPrimario;//Llamamos a la variable
+    }
+    .autor {
+        color: red;
+    }
+    p {
+        color: $colorPrimario;
+    }
+}
