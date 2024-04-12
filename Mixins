@@ -1,0 +1,36 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//MIXINS
+//Syntax: @mixin name(<arguments...>) { ... }
+//Es como crear una estructura, despues  la llamamos dentro de las demas
+//composiciones
+@mixin bordeyfondo($pixeles, $fondo) {
+    border-radius: $pixeles;
+    background: $fondo;
+}
+
+$primary-color: #3498db;
+
+//Ejemplo de uso:
+
+.caja {
+    width: 500px;
+    height: 500px;
+    margin: 20px;
+    padding: 10px;
+    @include bordeyfondo(20px, #ff5000); //Llamo al mixin dentro de la propiedad con el/los valores que quiera
+    background: $primary-color;
+    &:hover {
+        background-color: darken($primary-color, 10%);
+    }
+}
+
+//Funciones utiles:
+//https://gili842.medium.com/15-useful-scss-functions-to-enhance-your-stylesheets-c863a612b4e
